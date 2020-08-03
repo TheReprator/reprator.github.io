@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Host your Ktor application with Postgres DB on Heroku for free plan with Intellij Idea
+title: Host your Ktor application with Postgres DB on Heroku for free
 date: 2020-08-04 
 fig-caption: # Add figcaption (optional)
 tags: [Ktor, Heroku, Postgres, Intellij]
