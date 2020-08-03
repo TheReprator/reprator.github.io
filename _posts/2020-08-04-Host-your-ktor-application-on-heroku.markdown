@@ -176,7 +176,7 @@ please signup and have it.
   So, to do that, we have to run the following command, on your system terminal
   
 
-  >``heroku addons:create heroku-postgresql:`<`PLAN_NAME`>``
+  >``heroku addons:create heroku-postgresql:<PLAN_NAME>``
 
 
   For __free plan__, i am using hobby-dev, so at my end my db query is like below,
