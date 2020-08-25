@@ -100,6 +100,7 @@ Create a file named __system.properties__ in root folder or project, describing 
 >java.runtime.version=1.8
 
 ##  Step - 6:
+### 6.A(Create .env file) 
 Create a file named __.env__ in root folder or project,
  with contents like below,
  
@@ -111,6 +112,21 @@ JDBC_DATABASE_URL=jdbc:postgresql://localhost:5432/java_database_name
 If your local installation of postgresql has a user/password, you have to change the jdbc url too:
 ```
 JDBC_DATABASE_URL=jdbc:postgresql://localhost:5432/java_database_name?user=user&password=password
+```
+
+### 6.B(Database connection establishment)
+```
+private val hikariConfig = HikariConfig().apply {
+        jdbcUrl = System.getenv("JDBC_DATABASE_URL")
+    }
+
+    private val dataSource = if (hikariConfig.jdbcUrl != null)
+        HikariDataSource(hikariConfig)
+    else
+        configureHikariCP()
+
+    private fun configureHikariCP(): HikariDataSource {
+        val config = HikariConfig("/hikari.properties") 
 ```
 
 ### Local Deployment on Heroku
